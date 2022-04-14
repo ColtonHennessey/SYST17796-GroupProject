@@ -10,16 +10,23 @@ package ca.sheridancollege.project;
  * game. Students wishing to add to the code should remember to add themselves as a modifier.
  *
  * @author dancye
+ *@author elizabeth antony
  */
-public abstract class Card {
-    //default modifier for child classes
+public class Card {
+    private Suit suit;
+private Value value;
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
-    @Override
-    public abstract String toString();
+public Card(Suit suit, Value value){
+    this.value =value;
+    this.suit = suit;
+}
+
+public String toString(){
+    return this.suit.toString()+"-"+this.value.toString();
+}
+public Value getValue(){
+    return this.value;
+}
+
 
 }
