@@ -1,4 +1,4 @@
-package blackjackproject;
+package ca.sheridancollege.project;
 
 import java.util.Scanner;
 
