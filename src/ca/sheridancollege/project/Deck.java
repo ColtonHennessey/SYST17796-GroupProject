@@ -15,13 +15,16 @@ import java.util.Collections;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public class GroupOfCards {
+public class Deck {
 
     //The group of cards, stored in an ArrayList
     private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+    private int size;/**
+	 * the size of the grouping
+	 * @param size
+	 */
 
-    public GroupOfCards(int size) {
+    public Deck(int size) {
         this.size = size;
     }
 
@@ -51,5 +54,20 @@ public class GroupOfCards {
     public void setSize(int size) {
         this.size = size;
     }
+
+	public void addCardToDeck() {
+		// TODO - implement GroupOfCards.addCardToDeck
+		throw new UnsupportedOperationException();
+	}
+
+	public void removeCardFromDeck() {
+		// TODO - implement GroupOfCards.removeCardFromDeck
+		throw new UnsupportedOperationException();
+	}
+
+	public void draw() {
+		// TODO - implement GroupOfCards.draw
+		throw new UnsupportedOperationException();
+	}
 
 }//end class

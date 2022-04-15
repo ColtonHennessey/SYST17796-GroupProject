@@ -22,4 +22,15 @@ public abstract class Card {
     @Override
     public abstract String toString();
 
+	public Value getValue() {
+		return this.value;
+	}
+
+	public Suit getSuit() {
+		return this.suit;
+	}
+
+	private Suit suit;
+	private Value value;
+
 }

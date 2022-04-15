@@ -14,12 +14,16 @@ import java.util.ArrayList;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public abstract class Game {
+public abstract class Blackjack {
 
     private final String name;//the title of the game
-    private ArrayList<Player> players;// the players of the game
+    private ArrayList<Player> players;
+	private int roundNumber;/**
+	 * the players of the game
+	 * @param name
+	 */
 
-    public Game(String name) {
+    public Blackjack(String name) {
         this.name = name;
         players = new ArrayList();
     }
@@ -54,5 +58,27 @@ public abstract class Game {
      * When the game is over, use this method to declare and display a winning player.
      */
     public abstract void declareWinner();
+
+	public int getRoundNumber() {
+		return this.roundNumber;
+	}
+
+	/**
+	 * 
+	 * @param roundNumber
+	 */
+	public void setRoundNumber(int roundNumber) {
+		this.roundNumber = roundNumber;
+	}
+
+	public void addPlayer() {
+		// TODO - implement Game.addPlayer
+		throw new UnsupportedOperationException();
+	}
+
+	public void removePlayer() {
+		// TODO - implement Game.removePlayer
+		throw new UnsupportedOperationException();
+	}
 
 }//end class

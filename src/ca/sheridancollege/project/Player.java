@@ -46,4 +46,19 @@ public abstract class Player {
      */
     public abstract void play();
 
+	public void hit() {
+		// TODO - implement Player.hit
+		throw new UnsupportedOperationException();
+	}
+
+	public void stay() {
+		// TODO - implement Player.stay
+		throw new UnsupportedOperationException();
+	}
+
+	public void fold() {
+		// TODO - implement Player.fold
+		throw new UnsupportedOperationException();
+	}
+
 }
