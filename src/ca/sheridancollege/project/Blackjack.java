@@ -6,79 +6,46 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
- * The class that models your game. You should create a more specific child of this class and instantiate the methods
+ * The class that models your game. You should create a more specific child of
+ * this class and instantiate the methods
  * given.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public abstract class Blackjack {
+public class Blackjack
+{
 
-    private final String name;//the title of the game
-    private ArrayList<Player> players;
-	private int roundNumber;/**
-	 * the players of the game
-	 * @param name
-	 */
+   private ArrayList<Player> players = new ArrayList<>();
+   private int roundNumber;
+   private int playerCount;
+   Scanner scan = new Scanner(System.in);
 
-    public Blackjack(String name) {
-        this.name = name;
-        players = new ArrayList();
-    }
+   public void playGame ()
+   {
+      addPlayer();
+   }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+   public void addPlayer ()
+   {
+      System.out.println("Do you want to add a player? \n ENTER YES OR NO");
+      String playerInput = scan.next();
+      while (playerInput.equalsIgnoreCase("YES")) {
+         System.out.println("Enter Player Name: ");
+         String inputName = scan.next();
+         players.add(new Player(inputName, this.playerCount));
+         System.out.println("Adding " + players.get(this.playerCount).getPlayerName() + " to the game");
+         this.playerCount++;
+         System.out.println("Did you want to add another player? \n YES / NO");
+         playerInput = scan.next();
+      }
+      for (int i = 0; i < players.size(); i++) {
+         System.out.println(" # " + players.get(i).getPlayerNumber() + " : " + players.get(i).getPlayerName());
+      }
+   }
 
-    /**
-     * @return the players of this game
-     */
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
-    /**
-     * Play the game. This might be one method or many method calls depending on your game.
-     */
-    public abstract void play();
-
-    /**
-     * When the game is over, use this method to declare and display a winning player.
-     */
-    public abstract void declareWinner();
-
-	public int getRoundNumber() {
-		return this.roundNumber;
-	}
-
-	/**
-	 * 
-	 * @param roundNumber
-	 */
-	public void setRoundNumber(int roundNumber) {
-		this.roundNumber = roundNumber;
-	}
-
-	public void addPlayer() {
-		// TODO - implement Game.addPlayer
-		throw new UnsupportedOperationException();
-	}
-
-	public void removePlayer() {
-		// TODO - implement Game.removePlayer
-		throw new UnsupportedOperationException();
-	}
 
 }//end class
