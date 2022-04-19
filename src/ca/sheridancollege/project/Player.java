@@ -4,12 +4,12 @@ package ca.sheridancollege.project;
 public class Player
 {
    private String playerName;
-   private int playerNumber;
+   private Hand playerHand;
 
-   public Player (String playerName, int playerNumber)
+   public Player (String playerName, Hand playerHand)
    {
       this.playerName = playerName;
-      this.playerNumber = playerNumber;
+      this.playerHand = playerHand;
    }
 
    public String getPlayerName ()
@@ -22,16 +22,14 @@ public class Player
       this.playerName = playerName;
    }
 
-   public int getPlayerNumber ()
+   public Hand getPlayerHand ()
    {
-      return playerNumber;
+      return playerHand;
    }
 
-   public void setPlayerNumber (int playerNumber)
+   public void setPlayerHand (Hand playerHand)
    {
-      this.playerNumber = playerNumber;
+      this.playerHand = playerHand;
    }
-
-
 
 }

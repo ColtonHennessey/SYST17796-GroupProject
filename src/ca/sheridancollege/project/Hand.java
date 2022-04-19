@@ -19,11 +19,25 @@ public class Hand
 
    public String showHand ()
    {
+      boolean allCardsUp = true;
       String str = "";
       for (Card card : cards) {
          str += card.toString() + "\n";
+         if (!card.isCardUp) {
+            allCardsUp = false;
+         }
+      }
+      if (allCardsUp) {
+         str += "Total score = " + getTotalValue() + " \n";
       }
       return str;
+   }
+
+   public void flipCards ()
+   {
+      for (Card card : cards) {
+         card.flipCard();
+      }
    }
 
    public boolean giveCard (Card card, Hand otherHand)
@@ -36,5 +50,31 @@ public class Hand
       else {
          return false;
       }
+   }
+
+   public int getTotalValue ()
+   {
+      int totalScore = 0;
+      boolean hasAce = false;
+      for (int i = 0; i < cards.size(); i++) {
+         totalScore += cards.get(i).getValue();
+         if (cards.get(i).pirntValue().equals("Ace")) {
+            hasAce = true;
+         }
+         if (hasAce && totalScore <= 11) {
+            totalScore += 10;
+         }
+      }
+      return totalScore;
+   }
+
+   @Override
+   public String toString ()
+   {
+      String str = " ";
+      for (Card card : cards) {
+         str += card.toString() + " \n";
+      }
+      return str;
    }
 }

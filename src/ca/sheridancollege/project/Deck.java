@@ -12,14 +12,25 @@ public class Deck extends Hand
       for (Suit suit : Suit.values()) {
          for (Value value : Value.values()) {
             Card card = new Card(value, suit);
-            card.flipCard();
             this.add(card);
          }
       }
    }
-   
+
    public void shuffleDeck ()
    {
       Collections.shuffle(cards);
+   }
+
+   public void deal (Hand hand, int numOfCards)
+   {
+      for (int i = 0; i < numOfCards; i++) {
+         this.giveCard(cards.get(0), hand);
+      }
+   }
+
+   public void flipCard (Card card)
+   {
+      card.flipCard();
    }
 }

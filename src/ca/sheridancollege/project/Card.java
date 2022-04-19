@@ -5,7 +5,7 @@ public class Card
 {
    private Suit suit;
    private Value value;
-   private boolean isCardUp;
+   public boolean isCardUp;
 
    public Card (Value value, Suit suit)
    {
@@ -22,6 +22,11 @@ public class Card
    public int getValue ()
    {
       return this.value.getValue();
+   }
+
+   public String pirntValue ()
+   {
+      return value.printValue();
    }
 
    public void flipCard ()
