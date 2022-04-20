@@ -4,70 +4,33 @@
  * Add your name as an author and the date!
  */
 package ca.sheridancollege.project;
-
-import java.util.ArrayList;
 import java.util.Collections;
+public class Deck extends Hand
+{
+   public void fillDeck ()
+   {
+      for (Suit suit : Suit.values()) {
+         for (Value value : Value.values()) {
+            Card card = new Card(value, suit);
+            this.add(card);
+         }
+      }
+   }
 
-/**
- * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
- * once. The group of cards has a maximum size attribute which is flexible for reuse.
- *
- * @author dancye
- * @author Paul Bonenfant Jan 2020
- */
-public class Deck {
+   public void shuffleDeck ()
+   {
+      Collections.shuffle(cards);
+   }
 
-    //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
-    private int size;/**
-	 * the size of the grouping
-	 * @param size
-	 */
+   public void deal (Hand hand, int numOfCards)
+   {
+      for (int i = 0; i < numOfCards; i++) {
+         this.giveCard(cards.get(0), hand);
+      }
+   }
 
-    public Deck(int size) {
-        this.size = size;
-    }
-
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
-
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
-
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
-
-    /**
-     * @param size the max size for the group of cards
-     */
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-	public void addCardToDeck() {
-		// TODO - implement GroupOfCards.addCardToDeck
-		throw new UnsupportedOperationException();
-	}
-
-	public void removeCardFromDeck() {
-		// TODO - implement GroupOfCards.removeCardFromDeck
-		throw new UnsupportedOperationException();
-	}
-
-	public void draw() {
-		// TODO - implement GroupOfCards.draw
-		throw new UnsupportedOperationException();
-	}
-
-}//end class
+   public void flipCard (Card card)
+   {
+      card.flipCard();
+   }
+}

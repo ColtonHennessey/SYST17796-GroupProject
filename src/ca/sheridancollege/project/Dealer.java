@@ -2,23 +2,33 @@ package ca.sheridancollege.project;
 
 public class Dealer
 {
+   private String dealerName = "Dealer";
+   private Hand dealerHand;
 
-   public void checkForBlackJack ()
+   public Dealer (Hand dealerHand)
    {
-      // TODO - implement Dealer.checkForBlackJack
-      throw new UnsupportedOperationException();
+      this.dealerHand = dealerHand;
    }
 
-   public void dealCardsToPlayers ()
+   public String getDealerName ()
    {
-      // TODO - implement Dealer.dealCardsToPlayers
-      throw new UnsupportedOperationException();
+      return dealerName;
    }
 
-   public void revealHouseCards ()
+   public void setDealerName (String dealerName)
    {
-      // TODO - implement Dealer.revealHouseCards
-      throw new UnsupportedOperationException();
+      this.dealerName = dealerName;
    }
+
+   public Hand getDealerHand ()
+   {
+      return dealerHand;
+   }
+
+   public void setDealerHand (Hand dealerHand)
+   {
+      this.dealerHand = dealerHand;
+   }
+
 
 }
