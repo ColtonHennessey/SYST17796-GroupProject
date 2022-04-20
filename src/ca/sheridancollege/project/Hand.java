@@ -58,7 +58,7 @@ public class Hand
       boolean hasAce = false;
       for (int i = 0; i < cards.size(); i++) {
          totalScore += cards.get(i).getValue();
-         if (cards.get(i).pirntValue().equals("Ace")) {
+         if (cards.get(i).printValue().equals("Ace")) {
             hasAce = true;
          }
          if (hasAce && totalScore <= 11) {

@@ -49,10 +49,6 @@ public class Blackjack
          System.out.println("Did you want to add another player? \n YES / NO \n");
          playerInput = scan.next();
       }
-      System.out.println("List of Players: \n");
-      for (int i = 0; i < players.size(); i++) {
-         System.out.println(" # " + i + " : " + players.get(i).getPlayerName() + "\n");
-      }
    }
 
    public void removePlayer ()
@@ -138,9 +134,9 @@ public class Blackjack
          dealer.getDealerHand().cards.get(numOfCardsInHand).flipCard();
          System.out.println(dealer.getDealerHand().showHand());
          numOfCardsInHand++;
-      }
-      if (dealer.getDealerHand().getTotalValue() > 21) {
-         System.out.println("Dealer has busted! \n");
+         if (dealer.getDealerHand().getTotalValue() > 21) {
+            System.out.println("Dealer has busted! \n");
+         }
       }
    }
 

@@ -24,7 +24,7 @@ public class Card
       return this.value.getValue();
    }
 
-   public String pirntValue ()
+   public String printValue ()
    {
       return value.printValue();
    }
